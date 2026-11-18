@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Journal",
+  "scopeName": "source.jnl",
+  "patterns": [
+    {
+      "name": "punctuation.definition.separator.jnl",
+      "match": "^---\\s*$"
+    },
+    {
+      "name": "meta.entry.header.jnl",
+      "match": "^(\\d{4}-\\d{2}-\\d{2})([:|])\\s*([^|\\r\\n]*?)(?:\\s*(\\|)\\s*(.*))?$",
+      "captures": {
+        "1": { "name": "constant.numeric.date.jnl" },
+        "2": { "name": "punctuation.separator.jnl" },
+        "3": { "name": "entity.name.tag.mood.jnl" },
+        "4": { "name": "punctuation.separator.jnl" },
+        "5": { "name": "entity.name.type.theme.jnl" }
+      }
+    },
+    {
+      "name": "string.unquoted.jnl",
+      "match": "^(?!---|\\d{4}-\\d{2}-\\d{2}[:|]).+$"
+    }
+  ]
+}

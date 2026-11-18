@@ -1,0 +1,38 @@
+{
+  "name": "jnl-syntax",
+  "displayName": "Journal (.jnl) Syntax",
+  "description": "Lightweight syntax highlighting and folding for compact .jnl files",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "publisher": "OseeLabs",
+  "scripts": {
+    "package": "npx --package=@vscode/vsce vsce package"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "jnl",
+        "aliases": [
+          "Journal",
+          "jnl"
+        ],
+        "extensions": [
+          ".jnl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "jnl",
+        "scopeName": "source.jnl",
+        "path": "./syntaxes/Journal.tmLanguage.json"
+      }
+    ]
+  }
+}
