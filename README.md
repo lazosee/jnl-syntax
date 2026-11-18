@@ -1,65 +1,48 @@
-# jnl-syntax README
+# Journal (.jnl) Syntax
 
-This is the README for your extension "jnl-syntax". After writing up a brief description, we recommend including the following sections.
+Lightweight language support for Journal `.jnl` files in Visual Studio Code. The extension provides syntax highlighting and folding for journal entries.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Highlights entry dates, mood labels, optional themes, separators, and note text.
+- Supports both `:` and `|` between a date and mood, and `|` before an optional theme.
+- Treats lines between `---` markers as foldable entry sections.
+- Associates `.jnl` files with the **Journal** language mode automatically.
 
-For example if there is an image subfolder under your extension project workspace:
+The exact highlight colors depend on your selected VS Code theme.
 
-\!\[feature X\]\(images/feature-x.png\)
+## Journal format
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+An entry header starts with a date in `YYYY-MM-DD` form, followed by `:` or `|`, then a mood label. Add an optional theme after another `|`. Lines that do not match a header are treated as notes; notes can span multiple lines.
+
+```jnl
+---
+2026-11-18|tired|work
+Some notes here which
+can even be multiline
+---
+2026-11-17: ok | health
+---
+```
+
+## Usage
+
+Install the extension and open a `.jnl` file. If VS Code does not select **Journal** automatically, use the language-mode selector in the status bar and choose **Journal**.
+
+## Development
+
+To run the extension from this repository, open the folder in VS Code and press `F5` to launch an Extension Development Host. The included [`example.jnl`](./example.jnl) demonstrates the supported syntax.
+
+To package the extension as a VSIX, run:
+
+```sh
+npm run package
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Visual Studio Code 1.80.0 or later.
 
-## Extension Settings
+## Extension settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This extension does not contribute any settings.

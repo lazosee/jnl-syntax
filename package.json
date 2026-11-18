@@ -3,6 +3,10 @@
   "displayName": "Journal (.jnl) Syntax",
   "description": "Lightweight syntax highlighting and folding for compact .jnl files",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lazosee/jnl-syntax.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
